@@ -26,7 +26,8 @@ namespace WeatherForecast.Controllers
 		public async Task<IEnumerable<WeatherForecast>> GetAsync()
 		{
 			var res = await _weatherService.GetWeatherSummaries();
-			var Summaries = res.ToArray();
+			// var Summaries = res.ToArray();
+			var Summaries = new string[] { "cold", "hot", "humid", "warm", "sunny" };
 
 			var rng = new Random();
 			return Enumerable.Range(1, 5).Select(index => new WeatherForecast
